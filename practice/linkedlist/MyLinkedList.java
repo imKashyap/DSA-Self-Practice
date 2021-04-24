@@ -1,19 +1,11 @@
 package practice.linkedlist;
 
 public class MyLinkedList<E> {
-	public static class Node<E> {
-		E data;
-		Node<E> next;
-
-		Node(E data) {
-			this.data = data;
-		}
-	}
-
 	public Node<E> head;
 
 	public void add(E data) {
-		Node<E> toAdd = new Node<E>(data);
+		Node<E> toAdd;
+		toAdd = new Node<>(data);
 		if (head == null) {
 			head = toAdd;
 			return;
@@ -92,5 +84,14 @@ public class MyLinkedList<E> {
 
 	public boolean isEmpty() {
 		return head == null;
+	}
+
+	public static class Node<E> {
+		E data;
+		Node<E> next;
+
+		Node(E data) {
+			this.data = data;
+		}
 	}
 }
