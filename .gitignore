@@ -1,2 +1,7 @@
 # Ignoring tricky problems 
 /practice/tricky/*
+
+# Ignoring Implementation files
+/practice/linkedlist/MyLinkedListImplementation.java
+/practice/stack/MyStackImplementation.java
+/practice/queue/MyQueueImplementation.java
