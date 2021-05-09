@@ -1,21 +1,19 @@
-package comparatorsAndComparables;
+package practice.comparatorsAndComparables;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class MainClass {
-
 	public static void main(String[] args) {
-
 		List<Student> students = new ArrayList<>();
-
 		students.add(new Student(23, "Ram"));
 		students.add(new Student(35, "Shaym"));
 		students.add(new Student(83, "Aman"));
 		students.add(new Student(13, "Rohit"));
 		students.add(new Student(65, "Anuj"));
-
-//		Collections.sort(students); // It accept a List type argument which must extends comparable
-
+		Collections.sort(students); // It accept a List type argument which must extends comparable
 		students.forEach(System.out::println); // LAMBDA FUNCTION
 		/*
 		 * Here we are going inside the students , and iterating previously what we are
@@ -23,7 +21,6 @@ public class MainClass {
 		 * lambda function does here-- the "println" function which is present inside
 		 * "System.out", we used the student property on the student or whatever it is..
 		 */
-
 		// Lets suppose the student class do not extend the comparable then we can sort
 		// it using comparator class in this way
 
@@ -37,7 +34,7 @@ public class MainClass {
 		Collections.sort(students, new Comparator<Student>() {
 
 			@Override
-			public int compare(Student o1, Student o2) {
+			public int compare(Student o1,Student o2) {
 				if (o1.name.equals(o2.name)) {
 					return o1.marks - o2.marks;
 				} else {
@@ -83,6 +80,7 @@ public class MainClass {
 	}
 
 }
+
 
 // COMPARATORS CLASS
 class SortByNameThenMarks implements Comparator<Student> {

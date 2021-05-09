@@ -1,6 +1,6 @@
 package practice.stack;
 
-public class MyStackImplementation {
+class MainClass {
 	public static void main(String[] args) throws Exception {
 		MyStack<Integer> mys = new MyStack<>();
 		mys.push(23);

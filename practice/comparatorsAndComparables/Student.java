@@ -1,10 +1,10 @@
 
-package comparatorsAndComparables;
+package practice.comparatorsAndComparables;
 
-public class Student {
+public class Student implements Comparable<Student>{
 
-	int marks;
-	String name;
+	 int marks;
+	 String name;
 
 	public Student(int marks, String name) {
 		super();

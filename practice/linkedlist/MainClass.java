@@ -1,6 +1,6 @@
 package practice.linkedlist;
 
-public class MyLinkedListImplementation {
+public class MainClass {
 
 	public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub

@@ -18,7 +18,9 @@ public class MyClass2 {
         }
         String sponsor = sc.nextLine();
         String ans = findEduProgramClassification(programs);
-        System.out.println(Objects.requireNonNullElse(ans, "EduPrograms are not available now"));
+        if(ans==null)
+        System.out.println("EduPrograms are not available now");
+        else System.out.println(ans);
         EduProgram[] arr = findEduProgramBySponsor(programs, sponsor);
         if (arr == null)
             System.out.println("No EduProgram is available for the given sponsor");
