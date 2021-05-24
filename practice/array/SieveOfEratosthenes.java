@@ -1,3 +1,5 @@
+package practice.array;
+
 import java.util.Scanner;
 
 public class SieveOfEratosthenes {

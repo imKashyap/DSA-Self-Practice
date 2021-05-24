@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BubbleSort {
-	// time complexity: O(n^2).
+public class QuickSort {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		int n = Integer.parseInt(br.readLine());
@@ -14,7 +13,7 @@ public class BubbleSort {
 		int[] arr = new int[n];
 		for (int i = 0; i < n; i++)
 			arr[i] = Integer.parseInt(temp[i]);
-		sort(arr);
+		sort(arr, 0, n - 1);
 		StringBuffer sb = new StringBuffer();
 		for (int m = 0; m < n; m++)
 			sb.append(arr[m] + " ");
@@ -23,20 +22,32 @@ public class BubbleSort {
 
 	}
 
-	private static void sort(int[] arr) {
-		int n = arr.length;
-		for (int i = 0; i < n; i++) {
-			boolean swap = false;
-			for (int j = 0; j < n - i - 1; j++) {
-				if (arr[j] > arr[j + 1]) {
-					swap = true;
-					int tmp = arr[j];
-					arr[j] = arr[j + 1];
-					arr[j + 1] = tmp;
-				}
-			}
-			if (!swap)
-				break;
+	private static void sort(int[] arr, int l, int h) {
+		if (l < h) {
+			int pivot = partition(l, h, arr);
+			sort(arr, l, pivot - 1);
+			sort(arr, pivot + 1, h);
 		}
+	}
+
+	private static int partition(int l, int h, int[] arr) {
+		int pivot = (l + h) / 2;
+		int i = l;
+		int j = h;
+		while (i < j) {
+			while (i <= h && arr[i] <= arr[pivot])
+				i++;
+			while (j >= l && arr[j] > arr[pivot])
+				j--;
+			if (i < j) {
+				int t = arr[i];
+				arr[i] = arr[j];
+				arr[j] = t;
+			}
+		}
+		int t = arr[j];
+		arr[j] = arr[pivot];
+		arr[pivot] = t;
+		return j;
 	}
 }
