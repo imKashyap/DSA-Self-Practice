@@ -3,7 +3,7 @@ package practice.hashTables;
 public class MainClass {
 
 	public static void main(String[] args) {
-		SimpleHashTable ht = new SimpleHashTable();
+		ChainedHashTable ht = new ChainedHashTable();
 		Employee e1 = new Employee("Rahul Kashyap", 0);
 		Employee e2 = new Employee("Ravi Shankar", 1);
 		Employee e3 = new Employee("Diksha Dixit", 2);

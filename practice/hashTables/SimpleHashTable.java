@@ -7,12 +7,12 @@ public class SimpleHashTable {
 		hashTable = new StoredEmployee[10];
 	}
 
-	private int getKey(String name) {
+	private int getHash(String name) {
 		return name.length() % hashTable.length;
 	}
 
 	public void put(String key, Employee emp) {
-		int index = getKey(key);
+		int index = getHash(key);
 		if (isOccupied(index)) {
 			int stopIndex = index;
 			int start = (index + 1) % hashTable.length;
@@ -31,7 +31,7 @@ public class SimpleHashTable {
 	}
 
 	public Employee get(String key) {
-		int index = getKey(key);
+		int index = getHash(key);
 		if (hashTable[index] == null)
 			return null;
 		if (!hashTable[index].key.equals(key)) {
@@ -51,7 +51,7 @@ public class SimpleHashTable {
 	}
 
 	public Employee remove(String key) {
-		int index = getKey(key);
+		int index = getHash(key);
 		if (hashTable[index] == null)
 			return null;
 		if (!hashTable[index].key.equals(key)) {
